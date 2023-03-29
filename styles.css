@@ -1,0 +1,136 @@
+body {
+    background-color: #282a36;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.adana-container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #44475a;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.adana-title {
+    color: #40e0d0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.adana-subtitle {
+    color: #f8f8f2;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #f8f8f2;
+}
+
+.chat-input {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.chat-window {
+    background-color: #282a36;
+    border-radius: 5px;
+    height: 400px;
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.message {
+    color: #f8f8f2;
+    margin-bottom: 10px;
+    max-width: 75%;
+}
+
+.user-message {
+    background-color: #44475a;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.user {
+    align-self: flex-start;
+    text-align: left;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    max-width: 70%;
+    background-color: #6272a4;
+    border-radius: 10px;
+    color: #f8f8f2;
+    }
+
+.bot {
+    align-self: center;
+    text-align: left;
+    width: 100%;
+    padding: 0 50px;
+}
+
+.bot p {
+    color: #f8f8f2; /* Change the text color to a very light color */
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #f8f8f2;
+    background-color: #44475a;
+}
+
+button {
+    background-color: #40e0d0;
+    color: #f8f8f2;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #35c4b9;
+}
+
+input[type="text"]::selection {
+    background-color: transparent;
+}
+
+#objective {
+    flex: 1;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #f8f8f2;
+    background-color: #44475a;
+}
+
+
+select {
+    padding: 10px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    color: #f8f8f2;
+    background-color: #44475a;
+    appearance: none;
+}
