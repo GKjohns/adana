@@ -1,2 +1,2 @@
-# adana
-AI-driven data analysis
+# ADANA
+AI-driven data analysis ⚡️
