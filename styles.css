@@ -1,8 +1,9 @@
 body {
+    font-family: 'Roboto', sans-serif;
     background-color: #282a36;
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .adana-container {
@@ -75,17 +76,38 @@ label {
     background-color: #6272a4;
     border-radius: 10px;
     color: #f8f8f2;
-    }
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.3s ease-out forwards;
+}
 
 .bot {
     align-self: center;
     text-align: left;
     width: 100%;
-    padding: 0 50px;
+    padding-left: 50px;
+    padding-right: 20px;
+
+    /* Animation */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.3s ease-out forwards;
+}
+
+/* Keyframes for fadeInUp animation */
+@keyframes fadeInUp {
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .bot p {
-    color: #f8f8f2; /* Change the text color to a very light color */
+    color: #f8f8f2;
+    line-height: 1.6
+
 }
 
 input[type="text"] {
