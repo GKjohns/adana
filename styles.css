@@ -12,6 +12,7 @@ body {
     background-color: #44475a;
     border-radius: 5px;
     padding: 20px;
+
 }
 
 .adana-title {
@@ -40,6 +41,16 @@ label {
     align-items: center;
     margin-bottom: 20px;
 }
+
+/*
+.chat-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #44475a;
+    padding: 10px;
+}
+*/
 
 input[type="text"], select, .user, .bot {
     border-radius: 20px; /* Increase border-radius */
@@ -113,7 +124,7 @@ input[type="text"], select, .user, .bot {
     color: #f8f8f2;
     line-height: 1.6;
     margin: 10px 0;
-    padding: 20px 0;
+    padding: 10px 0;
 
 }
 
@@ -128,7 +139,8 @@ input[type="text"] {
 }
 
 .user {
-    box-shadow: 0 2px 4px rgba(248, 248, 242, 0.1); /* Add box-shadow */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); */
+    box-shadow: 0 2px 4px rgba(64, 224, 208, 0.1);
 }
 
 button {
@@ -138,10 +150,13 @@ button {
     border-radius: 5px;
     border: none;
     cursor: pointer;
+    box-shadow: 20px rgba(0, 0, 0, 0.9); /* Add box-shadow */
+
 }
 
 button:hover {
     background-color: #35c4b9;
+    transition: background-color 0.3s ease;
 }
 
 #send-btn:hover {
@@ -185,3 +200,12 @@ select {
     margin: 0;
 }
 
+/* input[type="text"]:focus, select:focus {
+    outline: none;
+    box-shadow: 0 0 2px #ff79c6;
+} */
+
+input[type="text"]:focus, select:focus {
+    outline: none;
+    box-shadow: none; /* Remove the box-shadow */
+}

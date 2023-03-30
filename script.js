@@ -23,6 +23,7 @@ sendButton.addEventListener("click", (event) => {
     userBubble.classList.add("user");
     userBubble.textContent = userMessage;
     chatWindow.appendChild(userBubble);
+    userBubble.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
     // Bot essay
     const botEssay = document.createElement("div");
@@ -33,6 +34,8 @@ sendButton.addEventListener("click", (event) => {
         <p>Sed sit amet tincidunt justo. Suspendisse et sapien est. Cras ut urna vel justo cursus convallis eu in ipsum. Ut at vestibulum nunc. Aenean facilisis, felis ut rhoncus feugiat, quam mauris tempus orci, ut suscipit felis lectus sed purus. Sed venenatis risus vitae tortor commodo lacinia.</p>
     `;
     chatWindow.appendChild(botEssay);
+    userBubble.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
 
     chatWindow.scrollTop = chatWindow.scrollHeight;
     adanaForm.reset();
