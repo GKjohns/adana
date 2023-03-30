@@ -1,3 +1,7 @@
+const yearElement = document.getElementById("year");
+const currentYear = new Date().getFullYear();
+yearElement.textContent = currentYear;
+
 const sendButton = document.getElementById("send-btn");
 const chatWindow = document.querySelector(".chat-messages");
 const adanaForm = document.getElementById("adana-form");
