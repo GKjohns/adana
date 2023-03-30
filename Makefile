@@ -1,6 +1,6 @@
 .PHONY: all install-backend backend frontend
 
-all: install-backend backend frontend
+all: install-backend backend browser frontend 
 
 install-backend:
 	cd backend && pip install -r requirements.txt
