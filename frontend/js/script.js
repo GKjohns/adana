@@ -6,6 +6,32 @@ const sendButton = document.getElementById("send-btn");
 const chatWindow = document.querySelector(".chat-messages");
 const adanaForm = document.getElementById("adana-form");
 
+async function sendRequest(prompt) {
+    const url = 'http://0.0.0.0:8881/api/predict';
+    const data = { prompt: prompt };
+
+    try {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (response.ok) {
+            const result = await response.json();
+            console.log(result.response);
+
+            return result
+        } else {
+            console.error('Error:', response.status);
+        }
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
 sendButton.addEventListener("click", (event) => {
     event.preventDefault();
 
@@ -26,13 +52,18 @@ sendButton.addEventListener("click", (event) => {
     userBubble.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
     // Bot essay
+    data_to_server = {
+        dataset: dataset,
+        objective: objective
+    }
+    
     const botEssay = document.createElement("div");
     botEssay.classList.add("bot");
-    botEssay.innerHTML = `
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et leo at mi facilisis efficitur. Suspendisse non ultricies enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer auctor justo sit amet mi bibendum, eget fringilla dolor tempus. Etiam feugiat risus quam, ut auctor lorem tempor ac.</p>
-        <p>Phasellus ultricies turpis nisl, eget pretium nunc bibendum eu. Aenean vestibulum diam eget quam tincidunt ullamcorper. Cras maximus purus vel quam vulputate, nec gravida massa pellentesque. Pellentesque egestas mi ac metus fringilla, eu fringilla arcu accumsan. Integer finibus, metus in fermentum eleifend, nisl urna pharetra sapien, vitae sollicitudin ligula urna vitae orci.</p>
-        <p>Sed sit amet tincidunt justo. Suspendisse et sapien est. Cras ut urna vel justo cursus convallis eu in ipsum. Ut at vestibulum nunc. Aenean facilisis, felis ut rhoncus feugiat, quam mauris tempus orci, ut suscipit felis lectus sed purus. Sed venenatis risus vitae tortor commodo lacinia.</p>
-    `;
+    sendRequest(objective)
+        .then((result) => {
+            botEssay.innerHTML = `<p>${result['response'].replace('\n', '</p>\n\n<p>')}</p>`
+        })
+    
     chatWindow.appendChild(botEssay);
     userBubble.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
