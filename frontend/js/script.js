@@ -49,7 +49,8 @@ sendButton.addEventListener("click", (event) => {
     userBubble.classList.add("user");
     userBubble.textContent = userMessage;
     chatWindow.appendChild(userBubble);
-    userBubble.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    // userBubble.scrollTop(true);
+    // userBubble.scrollIntoView(align)
 
     // Bot essay
     data_to_server = {
@@ -62,10 +63,10 @@ sendButton.addEventListener("click", (event) => {
     sendRequest(objective)
         .then((result) => {
             botEssay.innerHTML = `<p>${result['response'].replace('\n', '</p>\n\n<p>')}</p>`
-        })
+        });
+        // .then(() => userBubble.scrollIntoView(align))
     
     chatWindow.appendChild(botEssay);
-    userBubble.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
 
 
     chatWindow.scrollTop = chatWindow.scrollHeight;
