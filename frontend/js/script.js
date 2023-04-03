@@ -35,32 +35,23 @@ async function sendRequest(prompt) {
 sendButton.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const dataset = document.getElementById("dataset").value;
-    const objective = document.getElementById("objective").value;
+    const userMessage = document.getElementById("user-input").value;
 
-    if (objective.trim() === "") {
+    if (userMessage.trim() === "") {
         return;
     }
-
-    const userMessage = `Dataset: ${dataset}, Objective: ${objective}`;
 
     // User message
     const userBubble = document.createElement("div");
     userBubble.classList.add("user");
     userBubble.textContent = userMessage;
     chatWindow.appendChild(userBubble);
-    // userBubble.scrollTop(true);
-    // userBubble.scrollIntoView(align)
 
-    // Bot essay
-    data_to_server = {
-        dataset: dataset,
-        objective: objective
-    }
-    
+    data_to_server = userMessage;
+
     const botEssay = document.createElement("div");
     botEssay.classList.add("bot");
-    sendRequest(objective)
+    sendRequest(data_to_server)
         .then((result) => {
             botEssay.innerHTML = `<p>${result['response'].replace('\n', '</p>\n\n<p>')}</p>`
         });
@@ -70,5 +61,4 @@ sendButton.addEventListener("click", (event) => {
 
 
     chatWindow.scrollTop = chatWindow.scrollHeight;
-    adanaForm.reset();
 });

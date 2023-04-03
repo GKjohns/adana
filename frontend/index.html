@@ -14,15 +14,10 @@
         <h2 class="adana-subtitle">AI-powered Data Analysis ⚡️</h2> <!-- Add the subtitle -->
         
         <form class="chat-input" id="adana-form">
-            <label for="dataset">Dataset:</label>
-            <select id="dataset">
-                <option value="NYC payroll">NYC payroll</option>
-                <option value="Titanic">Titanic</option>
-                <option value="Zillow Housing">Zillow Housing</option>
-            </select>
-            <label for="objective">Objective:</label>
-            <input type="text" id="objective" placeholder="Who are the highest paid employees?">
-            <button id="send-btn">Send</button>
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="What are the top 5 jobs in terms of total pay?" /> <!-- Update the input field and its placeholder -->
+                <button id="send-btn">Send</button>
+            </div>
         </form>
         
         <div class="chat-window" id="chat-messages">
