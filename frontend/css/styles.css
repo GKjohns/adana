@@ -191,13 +191,3 @@ select {
     font-size: 0.9rem;
     margin: 0;
 }
-
-/* input[type="text"]:focus, select:focus {
-    outline: none;
-    box-shadow: 0 0 2px #ff79c6;
-} */
-
-/* input[type="text"]:focus, select:focus {
-    outline: none;
-    box-shadow: none; /* Remove the box-shadow */
-} */
