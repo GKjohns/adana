@@ -6,5 +6,4 @@ dist/
 build/
 *.log
 venv/
-../model/
 model/
