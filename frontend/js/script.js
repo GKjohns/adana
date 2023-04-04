@@ -56,7 +56,7 @@ sendButton.addEventListener("click", (event) => {
         .then((result) => {
             botEssay.innerHTML = `<p>${result['response'].replace('\n', '</p>\n\n<p>')}</p>`
         })
-        .then(() =>  botEssay.userBubble.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest'}));
+        .then(() =>  botEssay.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest'}));
     
     chatWindow.appendChild(botEssay);
     // botEssay.userBubble.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
