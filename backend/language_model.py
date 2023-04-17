@@ -26,7 +26,7 @@ def query_database(db_path, query):
             cursor = connection.cursor()
             cursor.execute(query)
 
-            rows = cursor.fetchall()[:20]   # limit response to 20 rows max
+            rows = cursor.fetchmany(20)   # limit response to 20 rows max
             columns = tuple([x[0] for x in cursor.description])
             
             return pd.DataFrame(rows, columns=columns)
